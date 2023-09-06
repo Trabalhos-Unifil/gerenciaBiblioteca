@@ -1,2 +1,5 @@
-public class autoAjuda {
+public class autoAjuda extends livro{
+    String assunto;
+
+
 }
