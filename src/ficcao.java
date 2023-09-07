@@ -1,15 +1,17 @@
 public class ficcao extends livro {
-    String classificacaoEtaria;
+    String clasEtaria;
 
-    public ficcao(String classificacaoEtaria) {
-        this.classificacaoEtaria = classificacaoEtaria;
+    public ficcao(int numRegistro, String titulo, String autor, String clasEtaria) {
+        super (numRegistro, titulo, autor);
+        this.clasEtaria = clasEtaria;
     }
 
-    public String getClassificacaoEtaria() {
-        return classificacaoEtaria;
+
+    public String getClasEtaria() {
+        return clasEtaria;
     }
 
-    public void setClassificacaoEtaria(String classificacaoEtaria) {
-        this.classificacaoEtaria = classificacaoEtaria;
+    public void setClasEtaria(String clasEtaria) {
+        this.clasEtaria = clasEtaria;
     }
 }

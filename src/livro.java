@@ -1,9 +1,15 @@
 public abstract class livro {
     private int numRegistro;
-    String titulo;
-    String autor;
+    private String titulo;
+    private String autor;
 
-    public int numRegistro() {
+    public livro(int numRegistro, String titulo, String autor) {
+        this.numRegistro = numRegistro;
+        this.titulo = titulo;
+        this.autor = autor;
+    }
+
+    public int getNumRegistro() {
         return numRegistro;
     }
 
@@ -11,7 +17,7 @@ public abstract class livro {
         this.numRegistro = numRegistro;
     }
 
-    public String titulo() {
+    public String getTitulo() {
         return titulo;
     }
 
@@ -19,7 +25,7 @@ public abstract class livro {
         this.titulo = titulo;
     }
 
-    public String autor() {
+    public String getAutor() {
         return autor;
     }
 
