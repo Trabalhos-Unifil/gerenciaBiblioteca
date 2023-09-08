@@ -1,9 +1,9 @@
-public abstract class livro {
+public abstract class Livro {
     private int numRegistro;
     private String titulo;
     private String autor;
 
-    public livro(int numRegistro, String titulo, String autor) {
+    public Livro(int numRegistro, String titulo, String autor) {
         this.numRegistro = numRegistro;
         this.titulo = titulo;
         this.autor = autor;

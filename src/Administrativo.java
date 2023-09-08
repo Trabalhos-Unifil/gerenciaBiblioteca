@@ -1,5 +1,8 @@
+import java.util.Scanner;
+
 public class Administrativo {
     Funcionario[] funcionarios;
+
 
     public Funcionario[] getFuncionarios() {
         return funcionarios;
@@ -9,4 +12,7 @@ public class Administrativo {
         this.funcionarios = funcionarios;
     }
 
+
 }
+
+

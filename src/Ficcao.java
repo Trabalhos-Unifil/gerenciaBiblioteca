@@ -1,7 +1,7 @@
-public class ficcao extends livro {
+public class Ficcao extends Livro {
     String clasEtaria;
 
-    public ficcao(int numRegistro, String titulo, String autor, String clasEtaria) {
+    public Ficcao(int numRegistro, String titulo, String autor, String clasEtaria) {
         super (numRegistro, titulo, autor);
         this.clasEtaria = clasEtaria;
     }
