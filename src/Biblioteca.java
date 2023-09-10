@@ -35,6 +35,28 @@ public class Biblioteca {
         this.acervo = acervo;
     }
 
+    public void adicionarLivro(Livro livro) {
+        // Verifica se o acervo já foi inicializado
+        if (acervo == null) {
+            acervo = new Livro[1]; // Inicializa o acervo com tamanho 1
+            acervo[0] = livro; // Adiciona o primeiro livro
+        } else {
+            // Cria um novo vetor com tamanho maior
+            Livro[] novoAcervo = new Livro[acervo.length + 1];
+
+            // Copia os livros existentes para o novo vetor
+            for (int i = 0; i < acervo.length; i++) {
+                novoAcervo[i] = acervo[i];
+            }
+
+            // Adiciona o novo livro ao final do novo vetor
+            novoAcervo[acervo.length] = livro;
+
+            // Atualiza a referência para o novo vetor
+            acervo = novoAcervo;
+        }
+    }
+
 
 
 
