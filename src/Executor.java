@@ -48,7 +48,7 @@ public class Executor {
                 case 3:
                     System.out.println ("Recuperando seu login e senha...");
                     System.out.println ("Digite o CPF de cadastro");
-                    funcionarios.recuperarSenha(scanner.nextLine ());
+                    //funcionarios.recuperarSenha(scanner.nextLine ());
                     System.out.println ("Login: " + funcionarios.getLogin ());
                     System.out.println ("Senha: " + funcionarios.getSenha ());
             }

@@ -8,7 +8,7 @@ public class Cliente extends Pessoa {
         // O cliente não está incrito
     }
 
-    public void fazerInscricao() {
+    public void realizarInscricao() {
         if (inscrito) {
             inscrito = true;
             System.out.println("Cliente " + getNome() + " Inscrição realizada com sucesso.");
@@ -20,7 +20,7 @@ public class Cliente extends Pessoa {
     public static void main(String[] args) {
         Cliente cliente1 = new Cliente("Giovana", "117.929.789-01");
 
-        cliente1.fazerInscricao(); // Cliente faz a inscrição pela primeira vez
-        cliente1.fazerInscricao(); // Tentativa de fazer a inscrição novamente
+        cliente1.realizarInscricao(); // Cliente realiza sua inscrição pela primeira vez
+        cliente1.realizarInscricao(); // Mostrará que Giovana já está inscrita
     }
 }
