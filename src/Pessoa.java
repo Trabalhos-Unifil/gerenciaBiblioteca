@@ -16,8 +16,8 @@ public abstract class Pessoa {
     }
 
     public void setCpf(String cpf) {
-        this.cpf = cpf.substring (0,3) + "." + cpf.substring (3,3) +
-                "." + cpf.substring (6, 3) + "-" + cpf.substring (9,2) ;
+        this.cpf = cpf.substring (0,3) + "." + cpf.substring (3,6) +
+                "." + cpf.substring (6, 9) + "-" + cpf.substring (9,11) ;
     }
 
     public String getNome() {

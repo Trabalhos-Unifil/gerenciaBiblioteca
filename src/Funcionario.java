@@ -34,12 +34,8 @@ public class Funcionario extends Pessoa {
         System.out.println ("********Cadastro de Novo Funcionário**********");
         System.out.println ("Digite o nome do funcionário: ");
         funcionarios.setNome(scanner.nextLine ());
-        System.out.println ("Digite o CPF do funcionário" + funcionarios.getNome () +" : ");
+        System.out.println ("Digite o CPF do funcionário " + funcionarios.getNome () +" (somente números) : ");
         funcionarios.setCpf (scanner.nextLine ());
-        while(funcionarios.getCpf ().length()!=11){
-            System.out.println ("Erro!!! Digite um CPF válido com 11 dígitos:");
-            funcionarios.setCpf (scanner.nextLine ());
-        }
         System.out.println ("Digite o login: ");
         funcionarios.setLogin(scanner.nextLine ());
         System.out.println ("Agora digite uma senha para o login " + funcionarios.getLogin () + ": (apenas números)");
@@ -49,6 +45,7 @@ public class Funcionario extends Pessoa {
                 "\nCPF: %s" +
                 "\nlogin: %s" +
                 "\nsenha: %d\n", funcionarios.getNome (), funcionarios.getCpf (), funcionarios.getLogin (), funcionarios.getSenha ());
+        scanner.nextLine ();
         Executor.pausarImpressao();
     }
     public boolean verificarFuncionario(Funcionario funcionario,Scanner scanner) {
