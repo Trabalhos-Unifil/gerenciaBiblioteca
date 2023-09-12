@@ -19,6 +19,7 @@ public class Biblioteca {
     public void setNomeBiblio(String nomeBiblio) {
         this.nomeBiblio = nomeBiblio;
     }
+
     public String getEndereco() {
         return endereco;
     }

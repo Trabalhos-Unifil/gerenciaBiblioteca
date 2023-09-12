@@ -64,16 +64,17 @@ public class Funcionario extends Pessoa {
     }
 
     public void recuperarSenha(String cpf, Scanner scanner) {
-        cpf = cpf.substring (0,3) + "." + cpf.substring (3,3) +
-                "." + cpf.substring (6, 3) + "-" + cpf.substring (9,2) ;
-        if(cpf.equalsIgnoreCase (getCpf ())) {
+        cpf = cpf.substring (0, 3) + "." + cpf.substring (3, 3) +
+                "." + cpf.substring (6, 3) + "-" + cpf.substring (9, 2);
+        if (cpf.equalsIgnoreCase (getCpf ())) {
             System.out.println ("CPF cadastrado!!");
             System.out.println ("Login: " + getLogin ());
             System.out.println ("Senha: " + getSenha ());
-        } else{
+        } else {
             System.out.println ("CPF não cadastrado!!");
 
         }
+    }
 }
 
 

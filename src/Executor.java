@@ -83,13 +83,36 @@ public class Executor {
                     break;
                 case 2:
                     subMenuAcervo();
-
+                    break;
+                case 3:
+                    emprestarLivro();
+                    break;
+                case 4:
+                    System.out.println("Saindo do programa....");
+                    scanner.close();
+                    System.exit(0);
+                default:
+                    System.out.println ("Opção inválida. Por favor escolha novamente!");
 
             }
         }
     }
 
     public static void subMenuAcervo(){
+        System.out.println ("********************* ESCOLHA UMA OPÇÃO ABAIXO ************************" +
+                            "\n 1. Cadastrar novo Livro" +
+                            "\n 2. Excluir cadastro de Livro" +
+                            "\n 3. Imprimir Acervo" +
+                            "\n 4. Voltar ao Menu anterior" +
+                            "\n 5. Sair do Sistema" +
+                            "\n OPÇÃO: ");
+        int escolhaSubMenuAcervo = scanner.nextInt ();
+
+
+
+    }
+
+    public static void emprestarLivro() {
 
     }
 
