@@ -49,7 +49,7 @@ public class Funcionario extends Pessoa {
                 "\nCPF: %s" +
                 "\nlogin: %s" +
                 "\nsenha: %d\n", funcionarios.getNome (), funcionarios.getCpf (), funcionarios.getLogin (), funcionarios.getSenha ());
-        Executor.pausarImpressao (scanner);
+        Executor.pausarImpressao();
     }
     public boolean verificarFuncionario(Funcionario funcionario,Scanner scanner) {
         System.out.println ("Digite seu login: ");
@@ -66,14 +66,14 @@ public class Funcionario extends Pessoa {
     public void recuperarSenha(String cpf, Scanner scanner) {
         cpf = cpf.substring (0,3) + "." + cpf.substring (3,3) +
                 "." + cpf.substring (6, 3) + "-" + cpf.substring (9,2) ;
-        while(cpf.equalsIgnoreCase (getCpf ())){
+        if(cpf.equalsIgnoreCase (getCpf ())) {
+            System.out.println ("CPF cadastrado!!");
+            System.out.println ("Login: " + getLogin ());
+            System.out.println ("Senha: " + getSenha ());
+        } else{
             System.out.println ("CPF não cadastrado!!");
-            System.out.println ("Digite um CPF já cadastrado ou faça um novo cadastro");
-            cpf = scanner.nextLine ();
+
         }
-
-
-    }
 }
 
 

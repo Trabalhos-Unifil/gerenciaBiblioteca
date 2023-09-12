@@ -4,8 +4,9 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Executor {
+    public static  Scanner scanner = new Scanner (System.in);
     public static void main(String[] args) {
-        Scanner scanner = new Scanner (System.in);
+
         List<Livro> acervo;
         boolean validaLogIn = false;
         Funcionario funcionarios = new Funcionario();
@@ -21,7 +22,7 @@ public class Executor {
                            "\nNome: %s" +
                            "\nEndereço: %s",biblioteca.getNomeBiblio (), biblioteca.getEndereco ());
 
-        pausarImpressao (scanner);
+        pausarImpressao();
         while(true) {
             System.out.println ("SISTEMA DE GERENCIAMENTO DA BIBLIOTECA " + biblioteca.getNomeBiblio ());
             System.out.println ("********************* ESCOLHA UMA OPÇÃO ABAIXO ************************" +
@@ -43,27 +44,56 @@ public class Executor {
                         validaLogIn = funcionarios.verificarFuncionario (funcionarios, scanner);
                     }
                     System.out.println ("Validação Correta!! Entrando no sistema...");
-                    mostrarMenu();
+                    mostrarMenu(biblioteca, scanner);
                     break;
                 case 3:
                     System.out.println ("Recuperando seu login e senha...");
                     System.out.println ("Digite o CPF de cadastro");
-                    funcionarios.recuperarSenha(scanner.nextLine ());
-                    System.out.println ("Login: " + funcionarios.getLogin ());
-                    System.out.println ("Senha: " + funcionarios.getSenha ());
+                    funcionarios.recuperarSenha(scanner.nextLine (), scanner);
+                    break;
+                case 4:
+                    System.out.println("Saindo do programa....");
+                    scanner.close();
+                    System.exit(0);
+                default:
+                    System.out.println ("Opção inválida. Por favor escolha novamente!");
             }
-            
         }
-
     }
-
-    private static void mostrarMenu(){
+    private static void mostrarMenu(Biblioteca biblioteca, Scanner scanner){
         while(true) {
-            System.out.println ();
+            System.out.println ("SISTEMA DE GERENCIAMENTO DA BIBLIOTECA " + biblioteca.getNomeBiblio ());
+            System.out.println ("********************* ESCOLHA UMA OPÇÃO ABAIXO ************************" +
+                                "\n 1. Cadastrar novo Cliente" +
+                                "\n 2. Gerenciar Acervo" +
+                                "\n 3. Emprestar Livro" +
+                                "\n 4. Sair do Sistema" +
+                                "\n OPÇÃO: ");
+            int escolhaMenu = scanner.nextInt ();
+            switch(escolhaMenu) {
+                case 1:
+                    Cliente cliente = new Cliente ();
+                    System.out.println ("Digite o nome do novo cliente");
+                    cliente.setNome (scanner.nextLine ());
+                    System.out.println ("Digite o CPF do novo cliente");
+                    cliente.setCpf (scanner.nextLine ());
+                    cliente.setInscricao ();
+                    cliente.imprimirCliente ();
+                    pausarImpressao ();
+                    break;
+                case 2:
+                    subMenuAcervo();
+
+
+            }
         }
     }
 
-    public static void pausarImpressao(Scanner scanner) {
+    public static void subMenuAcervo(){
+
+    }
+
+    public static void pausarImpressao() {
         System.out.println("-------------------------------------------------");
         System.out.println ("Pressione Qualquer Tecla para continuar.");
         scanner.nextLine ();
