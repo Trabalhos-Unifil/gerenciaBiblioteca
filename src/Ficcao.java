@@ -35,6 +35,7 @@ public class Ficcao extends Livro {
         Ficcao novoLivro = new Ficcao(gerarNumRegistro (), titulo, autor, clasEtaria);
         livrosFiccao.add(novoLivro);
         System.out.println("Livro cadastrado com sucesso!");
+        scanner.nextLine ();
         Executor.pausarImpressao ();
     }
 
@@ -47,19 +48,25 @@ public class Ficcao extends Livro {
             System.out.println("Classificação Etária: " + livroCadastrado.getClasEtaria());
             System.out.println("----------------------------------");
             Executor.pausarImpressao ();
+
         }
     }
 
     public static void emprestarLivro(String nomeLivro){
+        boolean livroEncontrado = false;
         for (Ficcao livroCadastrado: livrosFiccao) {
-            if(livroCadastrado.getTitulo ().equalsIgnoreCase (nomeLivro)){
+            if (livroCadastrado.getTitulo ().equalsIgnoreCase (nomeLivro)) {
                 System.out.println ("Livro está no acervo!!! Empréstimo confirmado");
-            } else {
-                System.out.println ("O livro não está disponível no acervo!! Escolha outro título");
+                livroEncontrado = true;
+                break;
             }
         }
+        if(!livroEncontrado) {
+            System.out.println ("O livro não está disponível no acervo!! Escolha outro título");
+        }
     }
-
-
-
 }
+
+
+
+

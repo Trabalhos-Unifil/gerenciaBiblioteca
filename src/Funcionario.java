@@ -61,8 +61,8 @@ public class Funcionario extends Pessoa {
     }
 
     public void recuperarSenha(String cpf, Scanner scanner) {
-        cpf = cpf.substring (0, 3) + "." + cpf.substring (3, 3) +
-                "." + cpf.substring (6, 3) + "-" + cpf.substring (9, 2);
+        cpf = cpf.substring (0, 3) + "." + cpf.substring (3, 6) +
+                "." + cpf.substring (6, 9) + "-" + cpf.substring (9, 11);
         if (cpf.equalsIgnoreCase (getCpf ())) {
             System.out.println ("CPF cadastrado!!");
             System.out.println ("Login: " + getLogin ());
@@ -71,6 +71,7 @@ public class Funcionario extends Pessoa {
             System.out.println ("CPF não cadastrado!!");
 
         }
+        Executor.pausarImpressao ();
     }
 }
 

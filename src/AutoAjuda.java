@@ -60,12 +60,16 @@ public class AutoAjuda extends Livro {
         }
     }
     public static void emprestarLivro(String nomeLivro){
+        boolean livroEncontrado = false;
         for (AutoAjuda livroCadastrado: livrosAutoAjuda) {
-            if(livroCadastrado.getTitulo ().equalsIgnoreCase (nomeLivro)){
+            if (livroCadastrado.getTitulo ().equalsIgnoreCase (nomeLivro)) {
                 System.out.println ("Livro está no acervo!!! Empréstimo confirmado");
-            } else {
-                System.out.println ("O livro não está disponível no acervo!! Escolha outro título");
+                livroEncontrado = true;
+                break;
             }
+        }
+        if(!livroEncontrado) {
+            System.out.println ("O livro não está disponível no acervo!! Escolha outro título");
         }
     }
 }

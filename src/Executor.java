@@ -88,7 +88,16 @@ public class Executor {
                     subMenuAcervo();
                     break;
                 case 3:
-                    emprestarLivro();
+                    System.out.println ("Emprestar Livro de Ficção (1) ou Auto Ajuda (2)");
+                    int emprestimo = scanner.nextInt ();
+                    System.out.println ("Digite o título do Livro");
+                    String nomeEmprestimo = scanner.nextLine ();
+                    scanner.nextLine ();
+                    if(emprestimo==1){
+                        Ficcao.emprestarLivro (nomeEmprestimo);
+                    } else{
+                        AutoAjuda.emprestarLivro(nomeEmprestimo);
+                    }
                     break;
                 case 4:
                     System.out.println("Saindo do programa....");
@@ -116,53 +125,43 @@ public class Executor {
                 case 1:
                     System.out.println ("Cadastrar Livro de Ficção (1) ou Auto Ajuda (2)");
                     int tipoLivro = scanner.nextInt ();
-                    if (tipoLivro == 1) {
-                        Ficcao livro = new Ficcao ();
-                        livro.cadastrarLivro ();
-                    } else {
-                        AutoAjuda livro = new AutoAjuda ();
-                        livro.cadastrarLivro ();
+                    switch (tipoLivro) {
+                        case 1:
+                            Ficcao livro = new Ficcao ();
+                            livro.cadastrarLivro ();
+                            break;
+                        case 2:
+                            AutoAjuda livro2 = new AutoAjuda ();
+                            livro2.cadastrarLivro ();
+                            break;
                     }
-                    break;
+
                 case 2:
-                    System.out.println ("Cadastrar Livro de Ficção (1) ou Auto Ajuda (2)");
+                    System.out.println ("Imprimir Livro de Ficção (1) ou Auto Ajuda (2)");
                     int imprimir = scanner.nextInt ();
-                    if (imprimir == 1) {
-                        Ficcao livro = new Ficcao ();
-                        livro.imprimirLivro ();
-                    } else {
-                        AutoAjuda livro = new AutoAjuda ();
-                        livro.imprimirLivro ();
+                    switch(imprimir) {
+                        case 1:
+                            Ficcao livro = new Ficcao ();
+                            livro.imprimirLivro ();
+                            pausarImpressao ();
+                            break;
+                        case 2:
+                            AutoAjuda livro2 = new AutoAjuda ();
+                            livro2.imprimirLivro ();
+                            pausarImpressao ();
+                            break;
                     }
-                    break;
+
                 case 3:
-                    System.out.println ("Emprestar Livro de Ficção (1) ou Auto Ajuda (2)");
-                    int emprestimo = scanner.nextInt ();
-                    System.out.println ("Digite o título do Livro");
-                    String nomeEmprestimo = scanner.nextLine ();
-                    scanner.nextLine ();
-                    if(emprestimo==1){
-                        Ficcao.emprestarLivro (nomeEmprestimo);
-                    } else{
-                        AutoAjuda.emprestarLivro(nomeEmprestimo);
-                    }
-                    break;
-                case 4:
                     return;
-                case 5:
+                case 4:
                     System.out.println ("Saindo do programa....");
                     scanner.close ();
                     System.exit (0);
                 default:
                     System.out.println ("Opção inválida. Por favor escolha novamente!");
-
             }
-
         }
-    }
-
-    public static void emprestarLivro() {
-
     }
 
     public static void pausarImpressao() {
